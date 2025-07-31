@@ -12,7 +12,8 @@ model_name = "google/gemma-3-12b-it"
 tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
 model = AutoModelForCausalLM.from_pretrained(
     model_name, 
-    device_map="auto",  # Uses accelerate to infer device map
+    device_map="auto",
+    load_in_8bit=True,  # Uses accelerate to infer device map
     # torch_dtype=torch.float16,  # Optional: can use float32 for more stability
     trust_remote_code=True)
 

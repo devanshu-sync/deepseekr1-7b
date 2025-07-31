@@ -3,12 +3,8 @@ import torch
 import os
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-# Set Hugging Face cache directory
-os.environ["HF_HOME"] = "/runpod-volume/hf_cache"
-os.makedirs("/runpod-volume/hf_cache", exist_ok=True)
-
 # Model and tokenizer loading
-model_name = "google/gemma-3-12b-it"
+model_name = "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B"
 print(f"Loading model: {model_name}")
 
 tokenizer = AutoTokenizer.from_pretrained(model_name)
@@ -17,8 +13,7 @@ tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForCausalLM.from_pretrained(
     model_name,
     device_map="auto",
-    load_in_8bit=True,  # Quantization
-    low_cpu_mem_usage=True
+      # Quantization
 )
 
 # Ensure pad token exists
@@ -32,7 +27,7 @@ def run_model(prompt):
         inputs = tokenizer(prompt, return_tensors="pt").to(model.device)
         outputs = model.generate(
             **inputs,
-            max_new_tokens=512,
+            max_new_tokens=1000,
             do_sample=True,
             temperature=0.7,
             top_p=0.9,

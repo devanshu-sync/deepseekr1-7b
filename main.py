@@ -8,7 +8,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 # from accelerate import init_empty_weights, load_checkpoint_and_dispatch, infer_auto_device_map
 
 # Load model and tokenizer outside the handler
-model_name = "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B"
+model_name = "google/gemma-3-12b-it"
 tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
 model = AutoModelForCausalLM.from_pretrained(
     model_name, 

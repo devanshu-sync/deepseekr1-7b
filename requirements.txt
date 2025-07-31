@@ -4,3 +4,5 @@ torch
 accelerate
 transformers
 bitsandbytes
+sentencepiece
+protobuf

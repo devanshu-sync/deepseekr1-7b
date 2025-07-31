@@ -33,7 +33,7 @@ def run_model(prompt):
             top_p=0.9,
             pad_token_id=tokenizer.pad_token_id
         )
-        return tokenizer.decode(outputs[0], skip_special_tokens=True)
+        return tokenizer.decode(outputs[0])
 
 def handler(event):
     print("Worker Start")

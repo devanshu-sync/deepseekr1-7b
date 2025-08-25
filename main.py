@@ -4,7 +4,7 @@ import os
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 # Model and tokenizer loading
-model_name = "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B"
+model_name = "google/gemma-3-4b"
 print(f"Loading model: {model_name}")
 
 tokenizer = AutoTokenizer.from_pretrained(model_name)

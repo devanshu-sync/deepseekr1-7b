@@ -4,7 +4,7 @@ import os
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 # Model and tokenizer loading
-model_name = "google/gemma-3-4b"
+model_name = "google/gemma-3-4b-it"
 print(f"Loading model: {model_name}")
 
 tokenizer = AutoTokenizer.from_pretrained(model_name)

@@ -1,7 +1,7 @@
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
 # Use the Gemma 3 4B instruction-tuned model
-model_name = "google/gemma-3-4b"
+model_name = "google/gemma-3-4b-it"
 
 local_path = "./gemma3_4b_model"
 

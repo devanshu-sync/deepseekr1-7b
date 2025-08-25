@@ -1,11 +1,16 @@
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
-model_name = "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B"
-local_path = "./deepseek_model"
+# Use the Gemma 3 4B instruction-tuned model
+model_name = "google/gemma-3-4b-it"
 
-# Download and save locally
+local_path = "./gemma3_4b_model"
+
+# Download and save the tokenizer
 tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
 tokenizer.save_pretrained(local_path)
 
+# Download and save the model
 model = AutoModelForCausalLM.from_pretrained(model_name, trust_remote_code=True)
 model.save_pretrained(local_path)
+
+
